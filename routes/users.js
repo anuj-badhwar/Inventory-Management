@@ -33,5 +33,9 @@ router.post('/register', function(req, res, next) {
   res.redirect('/users/login');
 });
 
+router.get('/logout',function(req,res){
+  res.redirect('/users/login');
+})
+
 
 module.exports = router;
