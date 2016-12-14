@@ -23,3 +23,11 @@ ul.error li{
     border-color: #ebccd1;
     list-style: none;
 }
+
+#login{
+  width:350px;
+}
+
+#register{
+  width: 450px;
+}
