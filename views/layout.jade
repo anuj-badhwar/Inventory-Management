@@ -17,15 +17,15 @@ html
         #navbar.navbar-collapse.collapse
           ul.nav.navbar-nav
             if !user
-              li
+              li(class=(title=='login'?'active':''))
                 a(href='/users/login') Login
-              li
+              li(class=(title=='register'?'active':''))
                 a(href='/users/register') Register
             if user
-              li
-                a(href='#') Dashboard
-              li
-                a(href='#') Modify
+              li(class=(title=='Dashboard'?'active':''))
+                a(href='/dashboard') Dashboard
+              li(class=(title=='modify'?'active':''))
+                a(href='/modify') Modify
           if user
             ul.nav.navbar-nav.navbar-right
               li

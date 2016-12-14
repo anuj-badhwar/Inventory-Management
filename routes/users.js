@@ -7,11 +7,11 @@ var passport = require('passport')
 var User = require('../models/user.js')
 
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  res.render('login',{title:'login'});
 });
 
 router.get('/register', function(req, res, next) {
-  res.render('register');
+  res.render('register',{title:'register'});
 });
 
 router.post('/register', function(req, res, next) {
