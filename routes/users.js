@@ -64,7 +64,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.post('/login',
-  passport.authenticate('local',{failureRedirect:'/users/register',failureFlash:'Invalid credentials'}),
+  passport.authenticate('local',{failureRedirect:'/users/login',failureFlash:'Invalid credentials'}),
   function(req, res) {
     res.redirect('/dashboard');
   });

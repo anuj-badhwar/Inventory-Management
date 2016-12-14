@@ -16,17 +16,22 @@ html
           a.navbar-brand(href='#') HCL Infosystems
         #navbar.navbar-collapse.collapse
           ul.nav.navbar-nav
-            li
-              a(href='/users/login') Login
-            li
-              a(href='/users/register') Register
-            li
-              a(href='#') Dashboard
-          ul.nav.navbar-nav.navbar-right
-            li
-              a(href='/users/logout')
-                | Logout
-                span.sr-only (current)
+            if !user
+              li
+                a(href='/users/login') Login
+              li
+                a(href='/users/register') Register
+            if user
+              li
+                a(href='#') Dashboard
+              li
+                a(href='#') Modify
+          if user
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='/users/logout')
+                  | Logout
+                  span.sr-only (current)
     .container
       != messages()
       block content
