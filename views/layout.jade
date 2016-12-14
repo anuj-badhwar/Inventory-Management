@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title= title
+    title Inventory Management System
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.css')
   body
@@ -21,13 +21,14 @@ html
             li
               a(href='/users/register') Register
             li
-              a(href='#') View
+              a(href='#') Dashboard
           ul.nav.navbar-nav.navbar-right
             li
               a(href='/users/logout')
                 | Logout
                 span.sr-only (current)
     .container
+      != messages()
       block content
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src='javascripts/bootstrap.js')
