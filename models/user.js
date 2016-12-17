@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/hcl');
+var connection = mongoose.createConnection('mongodb://localhost/hcl');
 
 var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
@@ -10,10 +10,11 @@ var UserSchema = new Schema({
       reg_time: {type: Date, default: Date.now},
       username: { type: String},
       password: { type: String},
+      admin : {type:Boolean, default:false},
       email: { type: String}
   });
 
-var User = module.exports = mongoose.model('user',UserSchema);
+var User = module.exports = connection.model('user',UserSchema);
 
 module.exports.createUser = function(newUser,cb){
   newUser.save(cb);

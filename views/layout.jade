@@ -24,8 +24,13 @@ html
             if user
               li(class=(title=='Dashboard'?'active':''))
                 a(href='/dashboard') Dashboard
-              li(class=(title=='modify'?'active':''))
-                a(href='/modify') Modify
+              if user
+                li(class=(title=='create'?'active':''))
+                  a(href='/users/create') Register User
+                li(class=(title=='modify'?'active':''))
+                  a(href='/modify') Modify
+                li(class=(title=='add'?'active':''))
+                  a(href='/inventory/add') Add Inventory
           if user
             ul.nav.navbar-nav.navbar-right
               li

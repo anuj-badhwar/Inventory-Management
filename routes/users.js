@@ -75,5 +75,4 @@ router.post('/login',
     res.redirect('/users/login');
   })
 
-
 module.exports = router;

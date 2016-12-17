@@ -1,0 +1,19 @@
+extend layout
+
+block content
+  p Please add the inventory using the form given below:
+  div(id='addInventory')
+    form(method='post', action='/inventory/add')
+     .form-group
+      label DC Location
+      input.form-control(name='location', type='text', placeholder='Enter Location')
+     .form-group
+      label Serial Number
+      input.form-control(name='serial', type='text', placeholder='Enter Serial Number')
+     .form-group
+      label Config
+      input.form-control(name='config', type='text', placeholder='Enter Configuration')
+     .form-group
+      label Model
+      input.form-control(name='model', type='text', placeholder='Enter Configuration')
+     input.btn.btn-primary(type='submit', name='submit',value='Add Inventory')
