@@ -31,3 +31,34 @@ ul.error li{
 #register{
   width: 450px;
 }
+
+.group{
+  margin: 15px;
+}
+
+.data{
+  float: left;
+  width: 80%;
+  background-color: #BEC7E9;
+  height: 35px;
+  padding: auto;
+  border: 1px solid #81A2D5;
+  text-align: center;
+  vertical-align: middle;
+  font-size:16px;
+  line-height: 35px;
+}
+
+.heading{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 35px;
+  float: left;
+  width: 20%;
+  height: 35px;
+  background-color: #4BA3C3;
+  font-size: 16px;
+  font-weight: bolder;
+  border: 1px solid #399688;
+
+}

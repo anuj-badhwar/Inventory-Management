@@ -6,9 +6,28 @@
 
       var InventorySchema = new Schema({
           serial : {type:String},
+          rack:String,
           config:{type:String},
           location:{type:String},
-          model:{type:String}
+          model:{type:String},
+          asset:String,
+          server:String,
+          Make:String,
+          AMC:String,
+          VSH:String,
+          virtual:String,
+          VSN:String,
+          IP:String,
+          DCIB:String,
+          Host:String,
+          OS:String,
+          License:String,
+          Owner:String,
+          LAN:String,
+          Config:String,
+          Storage:String,
+          RAID:String,
+          Backup:String
         });
 
   var Inventory = module.exports = connection.model('inventory',InventorySchema);
@@ -18,5 +37,5 @@
   }
 
   module.exports.findEntry = function(serial,cb){
-    Inventory.find({serial:serial},cb);
+    Inventory.findOne({serial:serial},cb);
   }

@@ -41,11 +41,9 @@ router.post('/search',function(req,res){
   Inventory.findEntry(serial,function(err,entry){
     if(err) throw err;
 
+    res.render('search',{'entry':entry});
     console.log(entry);
   })
-
-  res.redirect('/dashboard');
-
 })
 
 module.exports = router;
