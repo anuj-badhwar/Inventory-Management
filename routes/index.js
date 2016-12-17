@@ -11,8 +11,4 @@ router.get('/dashboard', function(req, res, next) {
   res.render('layout',{title:'Dashboard'});
 });
 
-router.get('/modify', function(req, res, next) {
-  res.render('layout',{title:'modify'});
-});
-
 module.exports = router;

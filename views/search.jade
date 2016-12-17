@@ -1,0 +1,11 @@
+extend layout
+
+block content
+  br
+  div(id='searchInventory')
+    p Please enter the Serial Number to Search 
+    form(method='post', action='/inventory/search')
+     .form-group
+      label Serial Number
+      input.form-control(name='serial', type='text', placeholder='Enter Serial Number')
+     input.btn.btn-primary(type='submit', name='submit',value='Search Inventory')

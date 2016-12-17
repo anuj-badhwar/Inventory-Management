@@ -8,6 +8,10 @@ router.get('/add', function(req, res, next) {
   res.render('add',{title:'add'});
 });
 
+router.get('/search', function(req, res, next) {
+  res.render('search',{title:'search'});
+});
+
 router.post('/add',function(req,res){
   var location = req.body.location;
   var serial = req.body.serial;
@@ -27,7 +31,7 @@ router.post('/add',function(req,res){
     console.log(entry);
   })
 
-  res.redirect('add');
+  res.redirect('/dashboard');
 
 })
 
