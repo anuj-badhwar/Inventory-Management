@@ -16,3 +16,7 @@
   module.exports.createEntry = function(newEntry,cb){
     newEntry.save(cb);
   }
+
+  module.exports.findEntry = function(serial,cb){
+    Inventory.find({serial:serial},cb);
+  }

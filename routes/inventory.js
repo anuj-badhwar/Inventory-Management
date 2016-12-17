@@ -35,4 +35,17 @@ router.post('/add',function(req,res){
 
 })
 
+router.post('/search',function(req,res){
+  var serial = req.body.serial;
+
+  Inventory.findEntry(serial,function(err,entry){
+    if(err) throw err;
+
+    console.log(entry);
+  })
+
+  res.redirect('/dashboard');
+
+})
+
 module.exports = router;

@@ -1,5 +1,5 @@
 body{
-  background-color: #eee !important;
+  background-color: #94DBA7 !important;
 }
 
 ul.success li{
@@ -30,8 +30,4 @@ ul.error li{
 
 #register{
   width: 450px;
-}
-
-#searchInventory{
-
 }
