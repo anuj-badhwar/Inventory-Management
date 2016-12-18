@@ -5,6 +5,7 @@ var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user.js')
+var Inventory = require('../models/inventory.js')
 
 router.get('/login', function(req, res, next) {
   res.render('login',{title:'login'});
@@ -12,6 +13,14 @@ router.get('/login', function(req, res, next) {
 
 router.get('/register', function(req, res, next) {
   res.render('register',{title:'register'});
+});
+
+router.get('/addInventory', function(req, res, next) {
+  res.render('add',{title:'add'});
+});
+
+router.get('/search', function(req, res, next) {
+  res.render('search',{title:'search'});
 });
 
 router.post('/register', function(req, res, next) {
@@ -64,10 +73,44 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.post('/login',
-  passport.authenticate('local',{failureRedirect:'/users/login',failureFlash:'Invalid credentials'}),
+  passport.authenticate('local',{failureRedirect:'/users/login',failureFlash:'Please LOGIN'}),
   function(req, res) {
     res.redirect('/dashboard');
   });
+
+  router.post('/add',passport.authenticate('local',{failureRedirect:'/users/login',failureFlash:'Please LOGIN'}),
+  function(req,res){
+    var location = req.body.location;
+    var serial = req.body.serial;
+    var config = req.body.config;
+    var model = req.body.model;
+
+    var newInv = new Inventory({
+      location : location,
+      serial : serial,
+      config : config,
+      model : model
+    });
+
+    Inventory.createEntry(newInv,function(err,entry){
+      if(err) throw err;
+
+      console.log(entry);
+    })
+
+    res.redirect('/dashboard');
+  })
+
+  router.post('/search',function(req,res){
+    var serial = req.body.serial;
+
+    Inventory.findEntry(serial,function(err,entry){
+      if(err) throw err;
+
+      res.render('search',{'entry':entry});
+      console.log(entry);
+    })
+  })
 
   router.get('/logout',function(req,res){
     req.logout();

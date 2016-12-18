@@ -26,9 +26,9 @@ html
                 a(href='/dashboard') Dashboard
               if user
                 li(class=(title=='add'?'active':''))
-                  a(href='/inventory/add') Add Inventory
-                li(class=(title=='modify'?'active':''))
-                  a(href='/inventory/search') Search
+                  a(href='/users/addInventory') Add Inventory
+                li(class=(title=='search'?'active':''))
+                  a(href='/users/search') Search
 
           if user
             ul.nav.navbar-nav.navbar-right
