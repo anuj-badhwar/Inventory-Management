@@ -1,6 +1,8 @@
   var mongoose = require('mongoose');
-  var connection = mongoose.createConnection('mongodb://localhost/hcl');
+//  var connection = mongoose.createConnection('mongodb://localhost/hcl');
+  var UserModel = require('./user');
 
+  var connection = UserModel.CONNECTION;
   var Schema = mongoose.Schema,
       ObjectId = Schema.ObjectId;
 

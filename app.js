@@ -48,6 +48,9 @@ app.use(function (req, res, next) {
 
 app.get('*',function(req,res,next){
   res.locals.user = req.user || null;
+  if(req.user){
+    res.locals.isAdmin = req.user.admin;
+  }
   next();
 });
 

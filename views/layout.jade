@@ -18,9 +18,9 @@ html
           ul.nav.navbar-nav
             if !user
               li(class=(title=='login'?'active':''))
-                a(href='/users/login') Login
+                a(href='/login') Login
               li(class=(title=='register'?'active':''))
-                a(href='/users/register') Register
+                a(href='/register') Register
             if user
               li(class=(title=='Dashboard'?'active':''))
                 a(href='/dashboard') Dashboard

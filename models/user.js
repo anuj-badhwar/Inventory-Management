@@ -33,3 +33,5 @@ module.exports.comparePassword = function(pass1,pass2,cb){
 module.exports.getUserById = function(id, callback){
 	User.findById(id, callback);
 }
+
+module.exports.CONNECTION = connection;
