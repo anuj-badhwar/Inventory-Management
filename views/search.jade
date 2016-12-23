@@ -13,67 +13,71 @@ block content
   br
   br
   if entry
-    .group
-      div.heading DC Location
-      div.data #{entry.location}
-      br
-    .group
-      div.heading Rack
-      div.data #{entry.rack}
-    .group
-      div.heading Serial Number
-      div.data #{entry.serial}
-    .group
-      div.heading Server
-      div.data #{entry.server}
-    .group
-      div.heading Asset ID
-      div.data #{entry.asset}
-    .group
-      div.heading Manufacturer
-      div.data #{entry.Make}
-    .group
-      div.heading Warranty/AMC Status
-      div.data #{entry.AMC}
-    .group
-      div.heading Virtual Server Host
-      div.data #{entry.VSH}
-    .group
-      div.heading Virtual Y/N
-      div.data #{entry.virtual}
-    .group
-      div.heading Configuration
-      div.data #{entry.Config}
-    .group
-      div.heading Virtual Server Name
-      div.data #{entry.VSN}
-    .group
-      div.heading IP
-      div.data #{entry.IP}
-    .group
-      div.heading DCIB BLADES
-      div.data #{entry.DCIB}
-    .group
-      div.heading Server/Host
-      div.data  #{entry.Host}
-    .group
-      div.heading OS
-      div.data #{entry.OS}
-    .group
-      div.heading License Status
-      div.data #{entry.License}
-    .group
-      div.heading Owner
-      div.data #{entry.Owner}
-    .group
-      div.heading Live Application
-      div.data #{entry.LAN}
-    .group
-      div.heading Storage
-      div.data #{entry.Storage}
-    .group
-      div.heading RAID
-      div.data #{entry.RAID}
-    .group
-      div.heading Backup/Owner
-      div.data #{entry.Backup}
+    .container.ShowFields
+      .group
+        div.heading DC Location
+        div.data #{entry.location}
+        br
+      .group
+        div.heading Rack
+        div.data #{entry.rack}
+      .group
+        div.heading Serial Number
+        div.data #{entry.serial}
+      .group
+        div.heading Server
+        div.data #{entry.server}
+      .group
+        div.heading Asset ID
+        div.data #{entry.asset}
+      .group
+        div.heading Manufacturer
+        div.data #{entry.Make}
+      .group
+        div.heading Warranty/AMC Status
+        div.data #{entry.AMC}
+      .group
+        div.heading Virtual Server Host
+        div.data #{entry.VSH}
+      .group
+        div.heading Virtual Y/N
+        div.data #{entry.virtual}
+      .group
+        div.heading Configuration
+        div.data #{entry.Config}
+      .group
+        div.heading Virtual Server Name
+        div.data #{entry.VSN}
+      .group
+        div.heading IP
+        div.data #{entry.IP}
+      .group
+        div.heading DCIB BLADES
+        div.data #{entry.DCIB}
+      .group
+        div.heading Server/Host
+        div.data  #{entry.Host}
+      .group
+        div.heading OS
+        div.data #{entry.OS}
+      .group
+        div.heading License Status
+        div.data #{entry.License}
+      .group
+        div.heading Owner
+        div.data #{entry.Owner}
+      .group
+        div.heading Live Application
+        div.data #{entry.LAN}
+      .group
+        div.heading Storage
+        div.data #{entry.Storage}
+      .group
+        div.heading RAID
+        div.data #{entry.RAID}
+      .group
+        div.heading Backup/Owner
+        div.data #{entry.Backup}
+      button.btn-primary.col-md-1.col-md-offset-2(id='edit',onclick="window.location = '/users/edit';",style='padding:6px') EDIT
+      button.btn-danger.col-md-1.col-md-offset-5(id='remove',style='padding:6px',onclick="window.location = '/users/remove';") REMOVE
+        

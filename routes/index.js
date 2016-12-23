@@ -60,7 +60,7 @@ passport.use(new LocalStrategy(function(username, password, done){
     User.comparePassword(password, user.password, function(err, isMatch){
       if(err) return done(err);
       if(isMatch){
-        return done(null, user);
+        return done(null, user.id);
       } else {
         return done(null, false, {message:'Invalid Password'});
       }

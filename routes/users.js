@@ -71,13 +71,4 @@ router.post('/addInventory', function(req,res){
     res.redirect('/login');
   })
 
-  /*function auth() {
-  return function(req, res, next) {
-    if(req.isAuthenticated())
-      next();
-    else
-      res.send('UNAUTHORISED');
-  }
-};*/
-
 module.exports = router;
