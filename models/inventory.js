@@ -9,7 +9,7 @@
       var InventorySchema = new Schema({
           serial : {type:String},
           rack:String,
-          config:{type:String},
+          //config:{type:String},
           location:{type:String},
           model:{type:String},
           asset:String,

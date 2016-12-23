@@ -3,7 +3,7 @@ extend layout
 block content
   p Please add the inventory using the form given below:
   div(id='addInventory')
-    form(method='post', action='/inventory/add')
+    form(method='post', action='/users/addInventory')
      .form-group
       label Serial Number
       input.form-control(name='serial', type='text', placeholder='Enter Serial Number')
@@ -12,7 +12,61 @@ block content
       input.form-control(name='location', type='text', placeholder='Enter Location')
      .form-group
       label Config
-      input.form-control(name='config', type='text', placeholder='Enter Configuration')
+      textarea.form-control(name='config',placeholder='Enter config')
+     .form-group
+      label Rack
+      input.form-control(name='rack', type='text', placeholder='Enter Rack')
+     .form-group
+      label Server
+      input.form-control(name='server', type='text', placeholder='Enter Server')      
+     .form-group
+      label Asset ID
+      input.form-control(name='asset', type='text', placeholder='Enter Asset ID')
+     .form-group
+      label Make/Manufacturer
+      input.form-control(name='make', type='text', placeholder='Enter Make/Manufacturer')  
+     .form-group
+      label Warranty/AMC
+      input.form-control(name='AMC', type='text', placeholder='Enter Warranty/AMC')  
+     .form-group
+      label Virtual Server Host
+      input.form-control(name='VSH', type='text', placeholder='Enter VSH')
+     .form-group
+      label Virtual Y/N
+      input.form-control(name='virtual', type='text', placeholder='Enter Virtual Y/N')   
+     .form-group
+      label Virtual Server Name
+      input.form-control(name='VSN', type='text', placeholder='Enter VSN')
+     .form-group
+      label IP
+      input.form-control(name='IP', type='text', placeholder='Enter IP')
+     .form-group
+      label DCIB BLADES
+      input.form-control(name='DCIB', type='text', placeholder='Enter DCIB')
+     .form-group
+      label Server/Host
+      input.form-control(name='Host', type='text', placeholder='Enter Server/Host')
+     .form-group
+      label OS
+      input.form-control(name='OS', type='text', placeholder='Enter Operating System')
+     .form-group
+      label License Status
+      input.form-control(name='License', type='text', placeholder='Enter License Status')
+     .form-group
+      label Owner
+      input.form-control(name='Owner', type='text', placeholder='Enter Owner')
+     .form-group
+      label Live Application Name
+      input.form-control(name='LAN', type='text', placeholder='Enter Live Application Name')
+     .form-group
+      label Storage
+      input.form-control(name='Storage', type='text', placeholder='Enter Storage')
+     .form-group
+      label RAID
+      input.form-control(name='RAID', type='text', placeholder='Enter RAID')
+     .form-group
+      label Backup/Owner
+      input.form-control(name='Backup', type='text', placeholder='Enter Backup')
      .form-group
       label Model
       input.form-control(name='model', type='text', placeholder='Enter Configuration')

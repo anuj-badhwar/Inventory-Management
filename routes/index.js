@@ -78,13 +78,4 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-module.exports.auth = function(){
-  return function(req,res,next){
-    if(req.isAuthenticated())
-      next();
-    else{
-      res.redirect('/login');
-    }
-  }
-}
 module.exports = router;

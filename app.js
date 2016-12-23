@@ -10,7 +10,7 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var inventory = require('./routes/inventory');
+//var inventory = require('./routes/inventory');
 
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
@@ -56,7 +56,7 @@ app.get('*',function(req,res,next){
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/inventory', inventory);
+//app.use('/inventory', inventory);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

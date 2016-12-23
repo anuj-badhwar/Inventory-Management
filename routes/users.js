@@ -5,26 +5,36 @@ var passport = require('passport')
 
 var User = require('../models/user.js');
 var Inventory = require('../models/inventory.js');
-var index = require('./index');
-var auth = index.auth;
 
-router.get('/addInventory', function(req, res, next) {
-
+router.get('/addInventory',function(req, res, next){
   res.render('add',{title:'add'});
 });
 
-router.post('/addInventory',
-    function(req,res){
-    var location = req.body.location;
-    var serial = req.body.serial;
-    var config = req.body.config;
-    var model = req.body.model;
+router.post('/addInventory', function(req,res){
 
     var newInv = new Inventory({
-      location : location,
-      serial : serial,
-      config : config,
-      model : model
+      serial : req.body.serial,
+      rack:req.body.rack,
+      location:req.body.location,
+      model:req.body.model,
+      asset:req.body.asset,
+      server:req.body.server,
+      Make:req.body.Make,
+      AMC:req.body.AMC,
+      VSH:req.body.VSH,
+      virtual:req.body.virtual,
+      VSN:req.body.VSN,
+      IP:req.body.IP,
+      DCIB:req.body.DCIB,
+      Host:req.body.Host,
+      OS:req.body.OS,
+      License:req.body.License,
+      Owner:req.body.Owner,
+      LAN:req.body.LAN,
+      Config:req.body.Config,
+      Storage:req.body.Storage,
+      RAID:req.body.RAID,
+      Backup:req.body.Backup
     });
 
     Inventory.createEntry(newInv,function(err,entry){
@@ -33,6 +43,7 @@ router.post('/addInventory',
       console.log(entry);
     })
 
+    req.flash('success','Details added to Database!');
     res.redirect('/dashboard');
 });
 
